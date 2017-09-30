@@ -166,6 +166,10 @@ export default class Example extends React.Component {
     return icon;
   }
 
+  processFrame = (frame) => {
+    console.log(frame);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -186,6 +190,7 @@ export default class Example extends React.Component {
           onZoomChanged={() => {}}
           defaultTouchToFocus
           mirrorImage={false}
+          onBarCodeRead={this.processFrame}
         />
         <View style={[styles.overlay, styles.topOverlay]}>
           <TouchableOpacity
